@@ -164,12 +164,13 @@ fun CustomButton(
 
 @Composable
 fun MenuButton(
-    stateViewModel: StateViewModel
+    stateViewModel: StateViewModel,
+    modifier: Modifier,
 ) {
     MainGridButton(
         stateViewModel = stateViewModel,
         mainGridId = MENU_GRID_ID,
-        modifier = Modifier
+        modifier = modifier
             .background(
                 color = Color(GRID_BACKGROUND_COLOR),
                 shape = RoundedCornerShape(GRID_ROUNDED_CORNER_SHAPE_PERCENT)

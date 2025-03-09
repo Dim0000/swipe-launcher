@@ -32,7 +32,8 @@ import timber.log.Timber
 @Composable
 fun EditMainGrid(
     dataBaseViewModel: DataBaseViewModel,
-    stateViewModel: StateViewModel
+    stateViewModel: StateViewModel,
+    modifier: Modifier,
 ) {
     Timber.v("start")
     val appData by dataBaseViewModel.appData.collectAsStateWithLifecycle()
@@ -40,7 +41,7 @@ fun EditMainGrid(
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(MAIN_GRID_COLUMNS),
-        modifier = Modifier
+        modifier = modifier
             .background(
                 color = Color(GRID_BACKGROUND_COLOR),
                 shape = RoundedCornerShape(GRID_ROUNDED_CORNER_SHAPE_PERCENT)

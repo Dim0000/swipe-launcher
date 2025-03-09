@@ -35,7 +35,8 @@ import timber.log.Timber
 @Composable
 fun EditSubGrid(
     dataBaseViewModel: DataBaseViewModel,
-    stateViewModel: StateViewModel
+    stateViewModel: StateViewModel,
+    modifier: Modifier
 ) {
     Timber.v("start")
     val appData by dataBaseViewModel.appData.collectAsStateWithLifecycle()
@@ -49,7 +50,7 @@ fun EditSubGrid(
 
     CustomAnimatedVisibility(
         visible = uiState.showSubGrid,
-        modifier = Modifier
+        modifier = modifier
     ) {
         LazyVerticalGrid(
             columns = GridCells.Fixed(SUB_GRID_COLUMNS),

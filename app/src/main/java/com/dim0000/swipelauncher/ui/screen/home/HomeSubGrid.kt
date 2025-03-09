@@ -39,7 +39,8 @@ fun HomeSubGrid(
     dataBaseViewModel: DataBaseViewModel,
     stateViewModel: StateViewModel,
     toEdit: () -> Unit,
-    toDrawer: () -> Unit
+    toDrawer: () -> Unit,
+    modifier: Modifier,
 ) {
     Timber.v("start")
     val appData by dataBaseViewModel.appData.collectAsStateWithLifecycle()
@@ -53,7 +54,7 @@ fun HomeSubGrid(
 
     CustomAnimatedVisibility(
         visible = uiState.showSubGrid,
-        modifier = Modifier
+        modifier = modifier
     ) {
         LazyVerticalGrid(
             columns = GridCells.Fixed(SUB_GRID_COLUMNS),
